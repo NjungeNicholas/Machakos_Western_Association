@@ -93,24 +93,24 @@ nav a:hover {
 .hero {
     min-height: 56vh;
     display: flex;
-    align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25));
     background-size: cover;
-    background-position: center;
     color: #fff;
 }
 
 .hero h1 {
     font-size: 2.2rem;
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    color: white;
 }
 
 .hero p {
     font-size: 1.2rem;
     opacity: .95;
-    margin-bottom: 1.5rem
+    margin-bottom: 5rem;
+    margin-top: 5rem;
 }
 .hero .cta {
     color: #fff;
@@ -143,7 +143,7 @@ nav a:hover {
     margin-bottom: 1rem
 }
 
-.objective, .quick-stats {
+.objective, .key-features, .quick-stats{
     display: grid;
     grid-template-columns:repeat(4,1fr);
     gap: 1rem;
@@ -198,97 +198,19 @@ nav a:hover {
     border: 0;
 }
 
-
-
-/* Events */
-.events {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem
-}
-
-.event {
-    padding: 1rem
-}
-
-.event img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px
-}
-
-.badge {
-    display: inline-block;
-    background: var(--blue);
-    color: #fff;
-    padding: .25rem .6rem;
-    border-radius: 6px;
-    font-weight: 700
-}
-
-/* Achievements timeline */
-.timeline {
+/* Events section */
+.gallery {
     display: flex;
-    flex-direction: column;
-    gap: .6rem
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
-
-.timeline .item {
-    display: flex;
-    gap: .8rem;
-    align-items: flex-start
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--gold);
-    margin-top: .6rem
-}
-
-/* News & Gallery */
-.news-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1rem
-}
-
-.news-card img {
-    width: 100%;
-    height: 180px;
+.gallery img {
+    width: 300px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px
-}
-
-/* Contact */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 1rem
-}
-
-form .row {
-    margin-bottom: .6rem
-}
-
-input,
-textarea,
-select {
-    width: 100%;
-    padding: .6rem;
     border-radius: 8px;
-    border: 1px solid #e6e9ee
-}
-
-button[type=submit] {
-    background: var(--blue);
-    color: #fff;
-    padding: .6rem .9rem;
-    border-radius: 8px;
-    border: 0;
-    font-weight: 700
 }
 
 /* Footer */
@@ -348,4 +270,113 @@ footer {
     .events {
         grid-template-columns: 1fr
     }
+}
+
+/* ...existing code... */
+
+/* Tablet screens (max-width: 900px) */
+@media (max-width: 900px) {
+    .wrap {
+        padding: 0.5rem;
+    }
+    .lead-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pdf-wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+    .objective, .key-features, .quick-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    .gallery img {
+        width: 90vw;
+        max-width: 400px;
+        height: 180px;
+    }
+}
+
+/* Large mobile screens (max-width: 700px) */
+@media (max-width: 700px) {
+    .pdf {
+        width: 95vw;
+        height: 350px;
+    }
+    .gallery img {
+        width: 95vw;
+        max-width: 350px;
+        height: 150px;
+    }
+    .about-content p {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+}
+
+/* Small screens (max-width: 560px) */
+@media (max-width: 560px) {
+    nav ul {
+        display: none;
+    }
+    .nav img {
+        height: 60px;
+    }
+    .hero h1 {
+        font-size: 1.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    .lead-grid {
+        grid-template-columns: 1fr;
+    }
+    .objective, .key-features, .quick-stats {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    .gallery img {
+        width: 98vw;
+        max-width: 98vw;
+        height: 120px;
+    }
+    .pdf {
+        width: 98vw;
+        height: 220px;
+    }
+    .about-content h2, .objectives h3 {
+        font-size: 1.1rem;
+    }
+    .about-content p {
+        font-size: 0.95rem;
+    }
+    .card {
+        padding: 0.5rem;
+    }
+    .nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Extra small screens (max-width: 400px) */
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .gallery img, .pdf {
+        width: 100vw;
+        height: 100px;
+    }
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
