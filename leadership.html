@@ -13,11 +13,16 @@
 <body>
     <header>
         <div class="nav">
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div>
-                <a href="index.html"><img src="Assets/images/loggomulembe.jpg" alt="MUWA Logo"></a>
+                <img src="Assets/images/loggomulembe.jpg" alt="loggomulembe">
             </div>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="leadership.html">Leadership</a></li>
@@ -66,11 +71,11 @@
     <section id="leadership" class="wrap">
         <h2>Meet Our Leaders</h2>
         <!-- Patron Section -->
-<div class="bg-white border-2 border-yellow-500 rounded-2xl shadow-xl p-8 text-center mb-10">
-  <h3 class="text-3xl font-bold text-blue-800">
-    Prof. Henry Imbeywa <span class="text-gray-700 font-medium"> - Patron</span>
-  </h3>
-</div>
+        <div class="bg-white border-2 border-yellow-500 rounded-2xl shadow-xl p-8 text-center mb-10">
+            <h3 class="text-3xl font-bold text-blue-800">
+                Prof. Henry Imbeywa <span class="text-gray-700 font-medium"> - Patron</span>
+            </h3>
+        </div>
         <p>MUWA is led by a dedicated team of student leaders who are committed to serving our members and promoting our
             values. Below are the current executive members:</p>
 
@@ -108,7 +113,7 @@
                 <li>Andrew Makora -Kakamega Rep.</li>
                 <li>Paul Moses-Busia rep.</li>
                 <li>Dickson wafula- Trans-nzoia Rep</li>
-                <li>Derick Luvusi -  Vihiga rep</li>
+                <li>Derick Luvusi - Vihiga rep</li>
                 <li>James Sirengo- Bungoma Rep.</li>
                 <li>Jessicah Ayuma - first year rep</li>
                 <li>Abraham - first year rep</li>
@@ -116,18 +121,29 @@
             </ul>
         </div>
     </section>
-      <footer>
-    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
-      <div style="max-width:640px">
-        <strong>Western Elites Association — MUWA</strong>
-        <div style="margin-top:.5rem;opacity:.9">&copy; 2025 MUWA. All rights reserved. Follow us on Facebook: Western
-          Elites Association</div>
-      </div>
-      <div class="socials">
-        <a href="https://web.facebook.com/profile.php?id=61568641740229" target="_blank"> Facebook</a>
-      </div>
-    </div>
-  </footer>
+    <footer>
+        <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+            <div style="max-width:640px">
+                <strong>Western Elites Association — MUWA</strong>
+                <div style="margin-top:.5rem;opacity:.9">&copy; 2025 MUWA. All rights reserved. Follow us on Facebook:
+                    Western
+                    Elites Association</div>
+            </div>
+            <div class="socials">
+                <a href="https://web.facebook.com/profile.php?id=61568641740229" target="_blank"> Facebook</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', function () {
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !expanded);
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
