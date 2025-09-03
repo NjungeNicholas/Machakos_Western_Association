@@ -13,11 +13,16 @@
 <body>
   <header>
     <div class="nav">
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <div>
-      <a href="index.html"><img src="Assets/images/loggomulembe.jpg" alt="loggomulembe"></a>
+        <img src="Assets/images/loggomulembe.jpg" alt="loggomulembe">
       </div>
       <nav>
-        <ul>
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="leadership.html">Leadership</a></li>
@@ -102,13 +107,16 @@
       </div>
     </div>
   </footer>
-
-  <!-- Notes for maintainers (not shown on page):
-       - Place all images and WesternElites_Constitution.pdf in the same folder as this file.
-       - Replace placeholder images: hero.jpg, about-photo.jpg, leader-*.jpg, event-*.jpg, gallery-*.jpg
-       - The constitution iframe will open the PDF in-browser; confirm your hosting allows PDF viewing.
-       - This is a static HTML/CSS prototype. For form submissions, integrate with your server or a third-party form service.
-  -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', function () {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>
