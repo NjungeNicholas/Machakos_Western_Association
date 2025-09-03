@@ -352,9 +352,6 @@ footer a {
         grid-template-columns: 1fr
     }
 }
-
-/* ...existing code... */
-
 /* Tablet screens (max-width: 900px) */
 @media (max-width: 900px) {
     .wrap {
