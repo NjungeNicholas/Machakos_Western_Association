@@ -1,17 +1,125 @@
-<!-- CONTACT & JOIN -->
-      <section id="contact" class="wrap">
-        <h2>Contact & Join</h2>
-        <div class="contact-grid">
-          <div class="card">
-            <h3>Get in touch</h3>
-            <p style="opacity:.9">Postal Address: P.O. BOX 136 – 90100 Machakos, Kenya</p>
-            <p style="opacity:.9">Email: westernelitesassociation@mksu.ac.ke</p>
-            <p style="opacity:.9">Phones: +254 742849423 / +254 789815413</p>
+<!DOCTYPE html>
+<html lang="en">
 
-            <h4 style="margin-top:1rem">FAQs</h4>
-            <p style="margin-top:.5rem;opacity:.9">Membership fee: Ksh 50 per semester and Ksh 20 monthly. Events are
-              open
-              to all students.</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Contact - Western Elites Association</title>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div>
+        <img src="Assets/images/loggomulembe.jpg" alt="loggomulembe">
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="constitution.html">Constitution</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="contact" class="wrap">
+      <h2>Contact & Join</h2>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Get in touch</h3>
+          <p style="opacity:.9">Postal Address: P.O. BOX 136 – 90100 Machakos, Kenya</p>
+          <p style="opacity:.9">Email: westernelitesassociation@mksu.ac.ke</p>
+          <p style="opacity:.9">Phones: +254 742849423 / +254 789815413</p>
+
+          <div class="faq-section">
+            <h4>FAQs</h4>
+            <div class="faq-item">
+              <button class="faq-question"><span class="faq-icon">+</span> What is the Machakos University Western Association (MUWA)?</button>
+              <div class="faq-answer">MUWA is a student-led cultural and social organization that brings together all
+                students from Western part of Kenya at Machakos University to promote unity, heritage, and personal
+                development.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span class="faq-icon">+</span> Who can join MUWA?</button>
+              <div class="faq-answer">Any student at Machakos University who identifies with or appreciates Luhya
+                culture is welcome to join.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span class="faq-icon">+</span> Is there a membership fee? </button>
+              <div class="faq-answer">Yes, a small fee (ksh 50) per semester and ksh 20 per month which may be required
+                to support events and activities. Details are shared during registration.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span class="faq-icon">+</span> What kind of events does MUWA organize?</button>
+              <div class="faq-answer">MUWA organizes a variety of events including cultural festivals, educational
+                workshops, and social gatherings aimed at promoting Luhya culture and fostering community among
+                students.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span class="faq-icon">+</span> Are non-Luhya students allowed to attend events?</button>
+              <div class="faq-answer">Absolutely! MUWA events are inclusive and open to all students interested in
+                learning and celebrating Luhya culture.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span class="faq-icon">+</span> How is MUWA governed?</button>
+              <div class="faq-answer">MUWA is governed by a committee elected by its members. The committee is
+                responsible for organizing events, managing finances, and representing the interests of the members.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question"><span class="faq-icon">+</span> How can I become a leader in MUWA?</button>
+              <div class="faq-answer">Leadership opportunities are available during annual elections. Active
+                participation and commitment are key.</div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div style="max-width:640px">
+        <strong>Western Elites Association — MUWA</strong>
+        <div style="margin-top:.5rem;opacity:.9">&copy; 2025 MUWA. All rights reserved.Follow us on Facebook: Western
+          Elites Association | Designed by <span style="color:gold (8, 8, 8);font-weight:bold;">Dev.Ian Teka</span>
+        </div>
+      </div>
+      <div class="socials">
+        <a href="https://web.facebook.com/profile.php?id=61568641740229" target="_blank"> Facebook</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', function () {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', function () {
+        this.parentElement.classList.toggle('active');
+        const icon = this.querySelector('.faq-icon');
+        if (this.parentElement.classList.contains('active')) {
+          icon.textContent = '-';
+        } else {
+          icon.textContent = '+';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
